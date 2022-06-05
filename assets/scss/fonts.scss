@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto/Roboto-Regular.eot');
+    src: url('./assets/fonts/Roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Roboto/Roboto-Regular.woff') format('woff'),
+        url('./assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto/Roboto-Light.eot');
+    src: url('./assets/fonts/Roboto/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Roboto/Roboto-Light.woff2') format('woff2'),
+        url('./assets/fonts/Roboto/Roboto-Light.woff') format('woff'),
+        url('./assets/fonts/Roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto/Roboto-Bold.eot');
+    src: url('./assets/fonts/Roboto/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Roboto/Roboto-Bold.woff') format('woff'),
+        url('./assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./assets/fonts/OpenSans/OpenSans-Light.eot');
+    src: url('./assets/fonts/OpenSans/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/OpenSans/OpenSans-Light.woff2') format('woff2'),
+        url('./assets/fonts/OpenSans/OpenSans-Light.woff') format('woff'),
+        url('./assets/fonts/OpenSans/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./assets/fonts/OpenSans/OpenSans-Regular.eot');
+    src: url('./assets/fonts/OpenSans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/OpenSans/OpenSans-Regular.woff2') format('woff2'),
+        url('./assets/fonts/OpenSans/OpenSans-Regular.woff') format('woff'),
+        url('./assets/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./assets/fonts/OpenSans/OpenSans-Bold.eot');
+    src: url('./assets/fonts/OpenSans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/OpenSans/OpenSans-Bold.woff2') format('woff2'),
+        url('./assets/fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
+        url('./assets/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./assets/fonts/OpenSans/OpenSans-SemiBold.eot');
+    src: url('./assets/fonts/OpenSans/OpenSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/OpenSans/OpenSans-SemiBold.woff2') format('woff2'),
+        url('./assets/fonts/OpenSans/OpenSans-SemiBold.woff') format('woff'),
+        url('./assets/fonts/OpenSans/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Basique Pro';
+    src: url('./assets/fonts/Basique/Basique.eot');
+    src: url('./assets/fonts/Basique/Basique.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Basique/Basique.woff2') format('woff2'),
+        url('./assets/fonts/Basique/Basique.woff') format('woff'),
+        url('./assets/fonts/Basique/Basique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Proxima Soft';
+    src: url('./assets/fonts/Proxima/ProximaSoft-Light.eot');
+    src: url('./assets/fonts/Proxima/ProximaSoft-Light.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Proxima/ProximaSoft-Light.woff2') format('woff2'),
+        url('./assets/fonts/Proxima/ProximaSoft-Light.woff') format('woff'),
+        url('./assets/fonts/Proxima/ProximaSoft-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cuprum';
+    src: url('./assets/fonts/Cuprum/Cuprum-Regular.eot');
+    src: url('./assets/fonts/Cuprum/Cuprum-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Cuprum/Cuprum-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Cuprum/Cuprum-Regular.woff') format('woff'),
+        url('./assets/fonts/Cuprum/Cuprum-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('./assets/fonts/fon/Oswald-Regular.eot');
+    src: url('./assets/fonts/fon/Oswald-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/fon/Oswald-Regular.woff2') format('woff2'),
+        url('./assets/fonts/fon/Oswald-Regular.woff') format('woff'),
+        url('./assets/fonts/fon/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lora';
+    src: url('./assets/fonts/fon/Lora-Regular.eot');
+    src: url('./assets/fonts/fon/Lora-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/fon/Lora-Regular.woff2') format('woff2'),
+        url('./assets/fonts/fon/Lora-Regular.woff') format('woff'),
+        url('./assets/fonts/fon/Lora-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+

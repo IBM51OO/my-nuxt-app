@@ -1,0 +1,205 @@
+.content{
+    background-color: #141518;
+}
+.white-theme .titles-cards__watch-all{
+    color: #000;
+}
+.titles-cards__watch-all{
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    color: #BDBDBD;
+}
+.titles-cards__nav{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    padding-top: 30px;
+}
+.white-theme .titles-cards__h1{
+    color: #000;
+}
+.titles-cards__h1{
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 22px;
+    color: #B7B7B7;
+}
+.titles-cards{
+    padding-top: 40px;
+}
+.titles-cards__nav hr{
+    background-color: #E1AC28;
+    height: 5px;
+    width: 70px;
+    outline: none;
+    border: none;
+    margin-left: 1px;
+    margin-top: 5px;
+}
+.white-theme .swiper-slide__image-link{
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+}
+.swiper-slide__image-link{
+    position: relative;
+    display: block;
+    z-index: 40;
+}
+.swiper-slide__image{
+    position: relative;
+    height: 305px;
+    width: 100%;
+}
+.swiper-slide__image-img .swiper-lazy{
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+.titles-cards .title-type{
+    position: absolute;
+    background: #6200ee;
+    font-family: "Open Sans";
+    font-weight: 500;
+    top: 88%;
+    left: 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 3px 10px 3px 10px;
+}
+.titles-cards .card-rate img{
+    height: 10px;
+    width: 10px;
+}
+.titles-cards .card-rate span{
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 5px;
+}
+.titles-cards .card-rate{
+    display: flex;
+    align-items: center;
+    background: #141518;
+    width: 66px;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 3px 13px 3px 13px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.swiper-slide__image-link:hover .swiper-slide__image-overlay{
+    transition: 0.3s;
+    opacity: 1;
+    visibility: visible;
+}
+.swiper-slide__image-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+}
+.swiper-slide__slides-fix{
+    display: block;
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+.titles-cards .swiper-button{
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    height: 51px;
+    width: 51px;
+    cursor: pointer;
+}
+.swiper-button-prev{
+    left: -24px;
+}
+.swiper-button-next{
+    right: -24px;  
+}
+.title__cards-title-name{
+    white-space: nowrap;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 4px 0;
+}
+.white-theme .title__cards-title-name-link{
+    color: #ff0000;
+    font-weight: 900;
+}
+.title__cards-title-name-link{
+    font-family: 'Proxima Soft';
+    font-weight: normal;
+    color: #F2F2F2;
+    font-size: 14px;
+    text-decoration: none;
+}
+.title__cards-titles{
+    position: relative;
+}
+.white-theme .titles__card-ep-counter{
+    color: #000;
+}
+.titles__card-ep-counter{
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #828282;
+    text-decoration: none;
+}
+.white-theme .titles__card-title-info a{
+    color: #000;
+}
+.titles__card-title-info a{
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: #828282;
+    text-decoration: none;
+}
+.content .titles__card-title-year:hover,.content .titles__card-title-type:hover{
+    color: #e1ac28;
+}
+.titles-cards-last-add{
+    position: relative;
+}
+.titles-cards-popular{
+    position: relative;
+}
+
+// dark theme
+
+.white-theme{                                        
+    background-color: #ededed;
+}
+
+.white-theme .theme-button{
+    color: #fff;
+    background-color: #333;
+}
+.theme-button{
+    position: fixed;
+    max-width: 150px;
+    z-index: 5;
+    left: 15px;
+    bottom: 15px;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-family: 'Roboto';
+    background-color: #6200ee;
+}

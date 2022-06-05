@@ -1,0 +1,68 @@
+.sign-up{
+    background: url(../../static/images/signup/ggggh.png) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 350px;
+    margin: 80px 0 20px 0;
+    position: relative;
+}
+.sign-up__image img{
+    position: absolute;
+    height: 430px;
+    width: 350px;
+    top: -29.9%;
+}
+.sign-up__image{
+    flex: 30%;
+}
+.sign-up__wrap{
+    display: flex;
+    align-items: center;
+}
+.sign-up__fiches img{
+    height: 35px;
+    width: 35px;
+}
+.sign-up__reg{
+    font-family: 'Roboto';
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.sign-up__about-reg{
+    font-family: 'Proxima Soft';
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.sign-up__about{
+    padding-top: 70px;
+    flex: 70%;
+}
+.sign-up__create-link{
+    display: block;
+    margin-top: 30px;
+    background: rgb(217,214,221);
+    background: linear-gradient(0deg, rgba(217,214,221,1) 0%, rgba(255,246,241,1) 100%);
+    padding: 13px 0px;
+    max-width: 220px;
+    text-align: center;
+    border-radius: 10px;
+    color: #373838;
+    font-family: 'Proxima Soft';
+    font-size: 18px;
+}
+.sign-up__fiches{
+    display: flex;
+    align-items: center;
+    margin: 0 -10px;
+}
+.sign-up__fiches img{
+    margin: 0 10px;
+}
+.sign-up__fiches span{
+    font-family: 'Proxima Soft';
+    color: #fff;
+    font-size: 16px;
+    
+}
