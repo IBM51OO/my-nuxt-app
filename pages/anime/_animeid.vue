@@ -11,22 +11,22 @@
                 <div class="title-header__descr-wrp">
                     <div class="title-header__name-wrp">
                         <h1 class="title-header__name">
-                            {{movieInfo.title}}
+                            {{getMovie.title}}
                         </h1>
                         <h2 class="title-header__name-eng">
-                            {{movieInfo.title_en}}
+                            {{getMovie.title_orig}}
                         </h2>
                     </div>
                 </div>
                 <div class="title-header__choice-rate">
                     <div class="title-header__rate-wrp">
                         <div class="title-header__rate">
-                            <div class="title-header__rate-our">Рейтинг: <span class="title__rate-num">{{movieInfo.kinopoisk_rating}}</span></div>
+                            <div class="title-header__rate-our">Рейтинг: <span class="title__rate-num">{{getMovieMaterial.kinopoisk_rating}}</span></div>
                             <div class="title__rate-shiki">
                                 <img src="/Group 223.png" alt="shiki"><span class="title__rate-num">7.5</span>
                             </div>
                             <div class="title__rate-imdb">
-                                IMDb<span class="title__rate-num">{{movieInfo.imdb_rating}}</span>
+                                IMDb<span class="title__rate-num">{{getMovieMaterial.imdb_rating}}</span>
                             </div>
                             <div class="title__rate-like-dropdown" id="title__rate-like-dropdown">
                                 <button class="title__rate-like" onclick="titleRateDropDown()">
@@ -68,11 +68,11 @@
                     <div class="title-content__about-actions">
                         <div class="title-content__imgs-card">
                             <div class="title-content__main-img">
-                                <img :src="movieInfo.poster_url" alt="alt">
+                                <img :src="getMovieMaterial.poster_url" alt="alt">
                             </div>
                         </div>
                         <div class="title-content__trailer">
-                            <a href="javascript:void(0);" class="title-content__trailer-run" @click="isPopUpActive = !isPopUpActive" :style="'background-image: url('+trailelVideos.image_url+');'">
+                            <a href="javascript:void(0);" class="title-content__trailer-run" @click="isPopUpActive = !isPopUpActive" :style="{ backgroundImage: `url(${getTrailer.image_url})`}">
                                 <div class="title-content__trailer-time">
                                     <span>2:23</span>
                                 </div>
@@ -91,7 +91,7 @@
                         <div class="title-content__about">
                             <h1 class="title-content__h1-about">О сериале</h1>
                             <div class="title-content__genre title-content__desc-st">
-                                <div class="title-content__desc-st-wrp" v-for="(genre,index) in genres" :key="index">
+                                <div class="title-content__desc-st-wrp" v-for="(genre,index) in getMovieMaterial.genres" :key="index">
                                     <span class="title-genre"><NuxtLink to="/">{{genre}}</NuxtLink></span>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                             </h1>
                             <hr>
                             <div class="title-content__desc-text">
-                                <p>{{animeDesc}}</p>
+                                <p>{{getMovieMaterial.anime_description}}</p>
                                 <a href="#" class="title-content__desc-read-more">Читать полностью</a>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                 <div class="title-content__images-from-title-wrp">
                     <h1>Кадры из аниме</h1>
                     <div class="title-content__images-from-title">
-                        <div class="title-content__images-from-title-wrp" v-for="(item,index) in screenshots" :key ="index">
+                        <div class="title-content__images-from-title-wrp" v-for="(item,index) in getMovieScreens" :key ="index">
                             <img :src="item" alt="">
                         </div>
                     </div>
@@ -154,12 +154,12 @@
                 <div class="container">
                     <div class="anime-player">
                         <div class="anime-player__video">
-                            <h1 class="anime-player__title-name">Смотреть аниме «<span>{{movieInfo.title}}</span>» онлайн<span></span></h1>
-                        <iframe id="kodik-player" :src="movie.link" width="810" height="470" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
+                            <h1 class="anime-player__title-name">Смотреть аниме «<span>{{getMovie.title}}</span>» онлайн<span></span></h1>
+                        <iframe id="kodik-player" :src="getMovie.link" width="810" height="470" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
                         </div>
                         <div class="anime-player__tabs">
                             <div class="anime-player__voicing">
-                                <span>Озвучка</span>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -168,39 +168,39 @@
         </section>
         <div class="title-content__trailers-wrapper" id="title-content__trailers-wrapper" @click="isPopUpActive = !isPopUpActive" v-if="isPopUpActive">
             <div class="title-content__trailers-content">
-                <iframe width="760" height="415" :src="this.trailelVideos.player_url" title="YouTube video player" allow="fullscreen"></iframe>
+                <iframe width="760" height="415" :src="getTrailer.player_url" title="YouTube video player" allow="fullscreen"></iframe>
             </div>
         </div>
     </div>
 </template>
 <script>
 
+import { mapGetters } from 'vuex'
+
 export default {
+    
     data() {
         return{
             movie: [],
             movieInfo: [],
             screenshots: [],
             trailelVideos: [],
-            animeDesc: [],
             isPopUpActive: false,
-            genres: []
         }
     },
-    async beforeCreate(){
-        const dataFromShiki = this.$axios.get('https://shikimori.one/api/animes/'+this.$route.params.animeid)
-        const resFromShiki = await dataFromShiki
-        if(resFromShiki.data.videos.length >= 1){
-            this.trailelVideos = resFromShiki.data.videos[0]
-        }
-        const data = this.$axios.get('https://kodikapi.com/search?token=b366fa83b760db1dc05b3c7d5f70331e&limit=1&with_material_data=true&shikimori_id='+this.$route.params.animeid)
-        const result = await data
-        this.movie = result.data.results[0]
-        this.genres = this.movie.material_data.anime_genres
-        console.log(this.genres)
-        this.movieInfo = this.movie.material_data
-        this.screenshots = this.movie.screenshots.slice(0,4)
-        this.animeDesc = this.movie.material_data.anime_description
+    computed: {
+        ...mapGetters({
+            getMovie:'content/getMovie',
+            getMovieMaterial:'content/getMovieMaterial',
+            getMovieScreens: 'content/getMovieScreens',
+
+            getTrailer: 'content/getTrailer',
+
+        })
+    },
+    beforeCreate: function () {
+        this.$store.dispatch('content/getAllMovies',this.$route.params.animeid)
+        this.$store.dispatch('content/getTrailerOfMovie',this.$route.params.animeid)
     },
     layout: 'header'
 }

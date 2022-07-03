@@ -63,16 +63,17 @@
                         </nav>
                         <ul class="header__nav-actions">
                             <li class="header__li header__nav-search">
-                                <form action="#" class="header__form" @submit.prevent="myMethod" @blur="currentStatusInput = false">
-                                    <img src="/loupe1.png" alt="search" class="header__search-img" @click="getMovies">
-                                    <input type="text" placeholder="Поиск" class="header__input" v-model="search" @input="setCurrentStatusInput">
-                                    <div class="header__search-result" id="header__search-result" v-show="currentStatusInput">
+                                <!-- @submit.prevent="myMethod" @blur="currentStatusInput = false" -->
+                                <form action="#" class="header__form"  >
+                                    <img src="/loupe1.png" alt="search" class="header__search-img">
+                                    <input type="text" placeholder="Поиск" class="header__input" v-model="debSearch" @input="debounceSearch">
+                                    <div class="header__search-result" id="header__search-result" v-show="currentStatusInput" v-click-outside="close">
                                         <div class="header__error" v-show="error">
                                             {{ error}}
                                         </div>
                                         
                                             <div class="header__search-result-title" v-for="movie in movies" :key="movie.id">
-                                                <NuxtLink :to="'/anime/'+movie.id" class="header__search-result-title-link">
+                                                <NuxtLink @click.native="close" :to="'/anime/'+movie.id" class="header__search-result-title-link">
                                             <img :src="'https://shikimori.one/'+movie.image.preview" alt="img">
                                             <div class="header__about-title">
                                                 <h1 class="header__title-name">
@@ -105,18 +106,24 @@
 </template>
 
 <script>
+import { exit } from 'process'
+
 export default {
     data(){
         return{
+            debSearch: '',
+            search: null,
+            debounce: null,
             movies: [],
-            search: '',
             currentStatusInput: false,
             error: ''
         }
     },
     methods: {
-        myMethod(){
-
+        close(){
+            console.log('fff')
+            this.currentStatusInput = false
+            this.debSearch = ''
         },
         setCurrentStatusInput(){
             if(this.search != '' && this.movies.length != 0){
@@ -131,10 +138,9 @@ export default {
             }
         },
         async getMovies(){
-            this.movies = []
+            this.movies.length = 0
             const data = this.$axios.get('https://shikimori.one/api/animes?limit=6&search='+this.search)
             const result = await data
-            
             result.data.forEach((movie) => {
                 this.movies.push(movie)
             })
@@ -144,9 +150,18 @@ export default {
             else{
                 this.error = ''
             }
-            console.log(this.movies)
             this.setCurrentStatusInput()
-        }
+        },
+        debounceSearch(event){
+            this.search = null
+            console.log(this.search)
+            clearTimeout(this.debounce)
+            this.debounce = setTimeout(() => {
+                this.search = event.target.value
+                this.getMovies()
+            }, 500)
+        },
+        
     }
 }
 </script>

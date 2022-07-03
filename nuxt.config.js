@@ -12,7 +12,6 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -23,7 +22,9 @@ export default {
   plugins: [
     // {src: '~/plugins/animepage.js',mode: 'client'},
     '~/plugins/swiper.js',
-    '~/plugins/abort.js'
+    '~/plugins/abort.js',
+    '~/plugins/click-outside.js'
+    
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -34,9 +35,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  
 }
