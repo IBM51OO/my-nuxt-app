@@ -21,7 +21,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // {src: '~/plugins/animepage.js',mode: 'client'},
-    '~/plugins/swiper.js',
+    {src: '~/plugins/swiper.js', ssr: 'false'},
+    
     '~/plugins/abort.js',
     '~/plugins/click-outside.js'
     
@@ -35,10 +36,16 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-lazy-load'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  generate: {
+		// Interval in milliseconds between two render cycles to avoid
+		// flooding a potential API with calls from the web application.
+		interval: 1000
+	},
   
 }

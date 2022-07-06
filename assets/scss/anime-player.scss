@@ -2,6 +2,7 @@
     background-color: #04050A;
     padding-bottom: 40px;
     padding-top: 40px;
+    margin-top: 60px;
 }
 .anime-player__title-name{
     color: #fff;
@@ -12,4 +13,129 @@
 .anime-player{
     display: flex;
     justify-content: center;
+}
+.anime-player__tabs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 40px;
+    padding-bottom: 30px;
+}
+.anime-player__tabs-btn{
+    background-color: #04050A;
+    color: #F2F2F2;
+    font-family: 'Oswald';
+    padding: 5px 20px;
+    border-radius: 3px;
+    width: 100px;
+}
+.anime-player__tabs .active{
+    background-color: #fff;
+    color: #333333;
+}
+.anime-player__data-type{
+    text-align: center;
+    margin:  10px 0;
+}
+.anime-player__tabs-wrp{
+    padding: 0 30px;
+}
+
+.anime-player__data{
+    height: 406px;
+    overflow-y: scroll;
+}
+.anime-player__data::-webkit-scrollbar{
+    background-color: #333333;
+    width: 7px;
+    border-radius: 3px;
+}
+.anime-player__data-wrp{
+    // margin-right: 30px;
+    margin: -10px 27px -10px 0;
+}
+.anime-player__data::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 3px;
+}
+.anime-player__data-type-btn{
+    width: 100%;
+    background-color: #12141E;
+    color: #F2F2F2;
+    border-radius: 3px;
+    padding: 6px 0;
+    font-family: 'Oswald';
+    cursor: pointer;
+}
+.anime_active{
+    background-color: #fff;
+    color: #333333;
+}
+
+.title-episodes__head{
+    color: #fff
+}
+
+.title-episode__bgr-img{
+    max-width: 210px;
+    height: 130px;
+    object-fit: cover;
+    position: absolute;
+    border-radius: 3px;
+}
+.title-episode__play-btn{
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+}
+.title-episode::before{
+    display: block;
+    position: absolute;
+    content: '';
+    width: 210px;
+    height: 130px;
+    background: rgba($color: #000000, $alpha: 0.5);
+    z-index: 4;
+}
+.title-episode__imgs{
+    position: relative;
+    height: 130px;
+    width: 210px;
+}
+.title-episodes__head{
+    color: #fff;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.title-episode__number span{
+    color: #fff;
+    font-family: 'Open Sans';
+}
+.title-episode__number{
+    margin-top: 5px;
+    font-size: 15px;
+}
+.episodes{
+    background-color: #12141E;
+    height: 600px;
+}
+.title-episodes-wrp{
+    padding-top: 20px;
+}
+.episodes .swiper-scrollbar{
+    background: #C4C4C4;
+    border-radius: 0;
+    height: 5px;
+    z-index: 50;
+    cursor: grab;
+}
+.carousel-wrapper .swiper-wrapper{
+    margin-bottom: 50px;
+}
+.episodes .swiper-scrollbar-drag{
+    background: #F2994A;
+    border-radius: 0;
 }

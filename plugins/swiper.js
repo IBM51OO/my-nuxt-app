@@ -1,11 +1,7 @@
-
-
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
-// import style (>= Swiper 6.x)
+// import style
 import 'swiper/swiper-bundle.css'
-
-// import style (<= Swiper 5.x)
 
 Vue.use(VueAwesomeSwiper)

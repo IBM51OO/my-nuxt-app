@@ -151,19 +151,37 @@
                 </div>
             </div>
             <div class="anime-player__wrapper">
-                <div class="container">
-                    <div class="anime-player">
-                        <div class="anime-player__video">
-                            <h1 class="anime-player__title-name">Смотреть аниме «<span>{{getMovie.title}}</span>» онлайн<span></span></h1>
-                        <iframe id="kodik-player" :src="getMovie.link" width="810" height="470" frameborder="0" allowfullscreen allow="autoplay *; fullscreen *"></iframe>
-                        </div>
-                        <div class="anime-player__tabs">
-                            <div class="anime-player__voicing">
-                                <span></span>
-                            </div>
-                        </div>
+            <div class="container">
+                <Player />
+            </div>
+        </div>
+        </section>
+        <section class="episodes">
+            <div class="title-episodes-wrp">
+            <div class="container">
+                <div class="title-episodes__head">
+                    <span class="">Серии</span>
+                </div>
+                <div class="title-episodes">
+                    <div class="carousel-wrapper">
+                        <swiper ref="playerSwiper" :options="playerSwiperOpt">
+                            <!-- <swiper-slide class="swiper-slide title-episode" v-for="(episode, index) in movies['0'].seasons[movies['0'].last_season].episodes" :key="index">
+                                <div class="title-episode__imgs">
+                                    <img :src="episode.screenshots[0]" class="title-episode__bgr-img" alt="">
+                                    <img src="/images/Vector.png" class="title-episode__play-btn" alt="">
+                                </div>
+                                <div class="title-episode__number">
+                                    <span>Серия {{index}}</span>
+                                </div>
+                            </swiper-slide> -->
+                        </swiper>
+                        <div class="swiper-scrollbar" slot="scrollbar"></div>
+                        
+                    </div>
+                    <div class="title-episodes__scroll">
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <div class="title-content__trailers-wrapper" id="title-content__trailers-wrapper" @click="isPopUpActive = !isPopUpActive" v-if="isPopUpActive">
@@ -176,32 +194,52 @@
 <script>
 
 import { mapGetters } from 'vuex'
-
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+  import 'swiper/swiper-bundle.esm'
+// import Nyka from '../../components/slider/Nyka.vue'
+// import { Scrollbar } from 'swiper'
+// import Player from '~/components/Player'
 export default {
-    
     data() {
-        return{
-            movie: [],
-            movieInfo: [],
-            screenshots: [],
-            trailelVideos: [],
+        return {
+            // season: movies.last
             isPopUpActive: false,
-        }
+            playerSwiperOpt: {
+                direction: "horizontal",
+                slidesPerView: "6",
+                spaceBetween: 20,
+                // cssMode: false,
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    snapOnRelease:true,
+                    draggable: true,
+                },
+                preloadImages: false,
+            }
+        };
     },
     computed: {
         ...mapGetters({
-            getMovie:'content/getMovie',
-            getMovieMaterial:'content/getMovieMaterial',
-            getMovieScreens: 'content/getMovieScreens',
-
-            getTrailer: 'content/getTrailer',
-
-        })
+            getMovie: "content/getMovie",
+            getMovieMaterial: "content/getMovieMaterial",
+            getMovieScreens: "content/getMovieScreens",
+            movies: "content/getMovies",
+            getTrailer: "content/getTrailer"
+        }),
+        playerSwiper() {
+            return this.$refs.mySwiper.$swiper;
+        }
     },
-    beforeCreate: function () {
-        this.$store.dispatch('content/getAllMovies',this.$route.params.animeid)
-        this.$store.dispatch('content/getTrailerOfMovie',this.$route.params.animeid)
+    async fetch() {
+        await this.$store.dispatch("content/getAllMovies", this.$route.params.animeid);
+        await this.$store.dispatch("content/getTrailerOfMovie", this.$route.params.animeid);
     },
-    layout: 'header'
+    // fetchOnServer: false,
+    layout: "header",
+    components: 
+    { 
+        Swiper,
+        SwiperSlide 
+    }
 }
 </script>

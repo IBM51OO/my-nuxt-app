@@ -1,5 +1,5 @@
 <template>
     <div>
-        Webpack
+        404
     </div>
 </template>
